@@ -1,6 +1,6 @@
 <?php if ($game['GameID'] > 0) { ?>
 	<div class="timer hidden">
-		<audio id="siren" src="sounds/tornado_siren.wav" controls preload="auto" autobuffer></audio>
+		<audio id="siren" src="sounds/siren_noise.wav" controls preload="auto" autobuffer></audio>
 		<table>
 			<tbody>
 				<tr class="display">
