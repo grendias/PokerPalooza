@@ -34,7 +34,7 @@ $themes = $repo->GetThemes();
 
 <html>
     <head>
-        <title>HomeGame - Dashboard</title>
+        <title>Pokerpalooza-Dashboard</title>
         <link rel="stylesheet" href="styles/font.css" type="text/css" />
         <link rel="stylesheet" href="styles/<?=$game['Theme']?>.css" type="text/css" />
 		<script type="text/javascript" src="scripts/jquery-2.1.3.js"></script>
@@ -47,8 +47,7 @@ $themes = $repo->GetThemes();
         <div class="header plaque">
             <div class="bevel">
                 <div class="header-text">Skinz's</div>
-				<!--<div class="header-text2">PokerPalooza</div>-->
-				<div class="header-text2">BirthdayPalooza</div>
+				<div class="header-text2">Dungeon of &nbsp;Sin</div>
             </div>
         </div>
         <div id="body">
