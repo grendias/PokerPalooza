@@ -1,8 +1,10 @@
 <?php
+	require_once('Logger.php');
 
 class Repository
 {
 	private $database = null;
+	private $logger = null;
 
 	public function __construct()
 	{
@@ -11,15 +13,28 @@ class Repository
 
 	private function CreateDatabaseConnection()
 	{
-		$this->database = new PDO(
-			'mysql:host=localhost;dbname=homegame;charset=utf8',
-			//'mysql:host=localhost;dbname=homegame-test;charset=utf8',
-			'root',		// user
-			''			// password
-		);
+		$this->logger = new Logger();
 
-		$this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$this->database->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
+		$this->logger->Write('[INFO]', '(repo)', "Attempting to connect to MySQL Database...");
+
+		try
+		{
+			$this->database = new PDO(
+				'mysql:host=localhost;dbname=homegame;charset=utf8',
+				//'mysql:host=localhost;dbname=homegame-test;charset=utf8',
+				'root',		// user
+				'',			// password,
+                array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)
+			);
+
+			$this->database->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
+		}
+		catch(PDOException $ex)
+		{
+			$this->logger->Write('[ERRO]', '(repo)', "Unable to connect to MySQL Database");
+		}
+		
+		$this->logger->Write('[INFO]', '(repo)', "Success!");
 	}
 
 	public function CloseGame()

@@ -2,8 +2,7 @@
 
 class Logger
 {
-	private $logfilepath = '../logs/dashboard-log.txt';
-
+    private $logfilepath = 'D\:\Projects\Pokerpalooza\www\logs\dashboard-log.txt';
 	public function __construct()
 	{
 		$this->SetLogFile();
@@ -11,39 +10,43 @@ class Logger
 
 	private function SetLogFile()
 	{
-        if (!$logfile = fopen($logfilepath, "r")) 
+        if (!$logfile = fopen($this->logfilepath, "a+")) 
         {
             echo "Cannot open file ($logfile)";
             exit;
         }
 
-        $filestart = fread($logfile, 3);
+        // Read the log date from the beginning of the file
+        $logdate = fread($logfile, 10);
 
-        if (isset($filestart) && $filestart !== date('m-d-y'))
+        // If the date is not today, rename the file to archive it
+        $today =  date('m-d-Y');
+        if (strpos($logdate, '-') && $logdate !== $today)
         {
             fclose($logfile);
-            rename($logfilepath, "../logs/dashboard-log_$today.txt");
+            $current = $this->logfilepath;
+            rename($current, "D\:\Projects\Pokerpalooza\www\logs\dashboard-log_$logdate.txt");
+            $logfile = fopen($this->logfilepath, "a+");
+            fclose($logfile);
         }
 	}
 
-	public function WriteLog($level, $source, $text)
+	public function Write($level, $source, $text)
 	{
-        if (!$logfile = fopen($logfilepath, "a+")) 
+        if (!$logfile = fopen($this->logfilepath, "a+")) 
         {
-            echo "Cannot open file ($logfilepath)";
+            echo "Cannot open file ($this->logfilepath)";
             exit;
         }
 
-        $source = str_pad($source, 10, " ");
-        $timestamp = NOW();
-        $entry = "$timestamp $level $source - $text\n";
+        $source = str_pad($source, 6, " ");
+        $timestamp = date('m-d-Y h:m:s');
+        $entry = "$timestamp $level $source - $text \r\n";
         
         if (fwrite($logfile, $entry) === FALSE) {
-            echo "Cannot write to file ($logfilepath)";
+            echo "Cannot write to file ($this->logfilepath)";
             exit;
         }
-
-        echo "Success, wrote ($entry) to file ($logfilepath)";
 
         fclose($logfile);
 	}
