@@ -19,6 +19,11 @@
 
     $('#Button_Upsert_Player').on('click', function () {
         upsertGamePlayer();
+        
+        $('#modal_overlay').addClass('hidden');
+        $('.popup-add-player').addClass('hidden');
+        stopTimer();
+        location.reload();
     });
 
     $('#Button_Upsert_Players').on('click', function () {
@@ -81,12 +86,24 @@
     });
     
     function upsertGamePlayers() {
+        $('#result_message').html("");
+
         $("#Upsert_Players li").each(function () {
             if ($(this).find('input').is(':checked')) {
                 $('#PlayerID').val($(this).data('id'));
-                upsertGamePlayer();
+                var data = upsertGamePlayer();
+                if (data) {
+                    if (data.message) {
+                        $('#result_message').append(data.message + "\r\n");
+                    }
+                }
             }
         });
+        
+        $('#modal_overlay').addClass('hidden');
+        $('.popup-add-player').addClass('hidden');
+        stopTimer();
+        location.reload();
     }
 
     function upsertGamePlayer() {
@@ -102,21 +119,12 @@
         $.ajax({
             url: "api/upsertgameplayer.php",
             type: "post",
+            async: false,
             data: JSON.stringify(data),
             dataType: 'json'
         })
         .done(function (data) {
-            if (data) {
-                if (data.message) {
-                    $('#result_message').html(data.message);
-                }
-                else {
-                    $('#modal_overlay').addClass('hidden');
-                    $('.popup-add-player').addClass('hidden');
-                    stopTimer();
-                    location.reload();
-                }
-            }
+            return data;
         })
         .error(function (e) {
             alert(e.responseText);

@@ -1,16 +1,49 @@
-07-09-2016 10:07:59 [INFO] (repo) - Attempting to connect to MySQL Database... 
-07-09-2016 10:07:59 [INFO] (repo) - Success! 
-07-09-2016 10:07:14 [INFO] (repo) - Attempting to connect to MySQL Database... 
-07-09-2016 10:07:14 [INFO] (repo) - Success! 
-07-09-2016 10:07:20 [INFO] (repo) - Attempting to connect to MySQL Database... 
-07-09-2016 10:07:20 [INFO] (repo) - Success! 
-07-09-2016 10:07:23 [INFO] (repo) - Attempting to connect to MySQL Database... 
-07-09-2016 10:07:23 [INFO] (repo) - Success! 
-07-09-2016 10:07:36 [INFO] (repo) - Attempting to connect to MySQL Database... 
-07-09-2016 10:07:36 [INFO] (repo) - Success! 
-07-09-2016 10:07:40 [INFO] (repo) - Attempting to connect to MySQL Database... 
-07-09-2016 10:07:40 [INFO] (repo) - Success! 
-07-09-2016 10:07:41 [INFO] (repo) - Attempting to connect to MySQL Database... 
-07-09-2016 10:07:41 [INFO] (repo) - Success! 
-07-09-2016 10:07:43 [INFO] (repo) - Attempting to connect to MySQL Database... 
-07-09-2016 10:07:43 [INFO] (repo) - Success! 
+07-10-2016 03:07:48 [INFO] (repo) - Player ID 809 got boosted! 
+07-10-2016 03:07:48 [INFO] (repo) - Time 15:00 saved. 
+07-10-2016 03:07:52 [INFO] (repo) - Player ID 807 has dropped some muthafukkin cash! 
+07-10-2016 03:07:52 [INFO] (repo) - Time 15:00 saved. 
+07-10-2016 03:07:54 [INFO] (repo) - Player ID 806 has dropped some muthafukkin cash! 
+07-10-2016 03:07:54 [INFO] (repo) - Time 15:00 saved. 
+07-10-2016 03:07:56 [INFO] (repo) - Player ID 808 has dropped some muthafukkin cash! 
+07-10-2016 03:07:56 [INFO] (repo) - Time 15:00 saved. 
+07-10-2016 03:07:00 [INFO] (repo) - Game Player ID 807 is out. Kick rocks, nerd! 
+07-10-2016 03:07:00 [INFO] (repo) - Time 15:00 saved. 
+07-10-2016 03:07:06 [INFO] (repo) - Game Player ID 808 is out. Kick rocks, nerd! 
+07-10-2016 03:07:06 [INFO] (repo) - Time 15:00 saved. 
+07-10-2016 03:07:09 [INFO] (repo) - Game Player ID 806 is out. Kick rocks, nerd! 
+07-10-2016 03:07:09 [INFO] (repo) - Time 15:00 saved. 
+07-10-2016 03:07:12 [INFO] (repo) - Game Player ID 809 is out. Kick rocks, nerd! 
+07-10-2016 03:07:12 [INFO] (repo) - Time 15:00 saved. 
+07-10-2016 03:07:15 [ERRO] (repo) - Error placing player: PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'PlacingID' cannot be null in D:\Projects\Pokerpalooza\src\Repository.php:472
+Stack trace:
+#0 D:\Projects\Pokerpalooza\src\Repository.php(472): PDOStatement->execute()
+#1 D:\Projects\Pokerpalooza\www\api\upsertplayerplacing.php(6): Repository->UpsertPlacing(Array)
+#2 {main} 
+07-10-2016 03:07:26 [INFO] (repo) - Game Player ID 750 is out. Kick rocks, nerd! 
+07-10-2016 03:07:26 [INFO] (repo) - Time 20:00 saved. 
+07-10-2016 03:07:02 [INFO] (repo) - Game Player ID 749 is out. Kick rocks, nerd! 
+07-10-2016 03:07:02 [INFO] (repo) - Time 20:00 saved. 
+07-10-2016 03:07:05 [INFO] (repo) - Game Player ID 761 is out. Kick rocks, nerd! 
+07-10-2016 03:07:05 [INFO] (repo) - Time 20:00 saved. 
+07-10-2016 03:07:08 [INFO] (repo) - Game Player ID 752 is out. Kick rocks, nerd! 
+07-10-2016 03:07:08 [INFO] (repo) - Time 20:00 saved. 
+07-10-2016 03:07:24 [INFO] (repo) - Theme updated. Your local developer thanks you...bitch. 
+07-10-2016 03:07:42 [INFO] (repo) - Game created. Let's get it on! 
+07-10-2016 03:07:48 [INFO] (repo) - Player ID #1 wants to get some 
+07-10-2016 03:07:48 [INFO] (repo) - Player ID #2 wants to get some 
+07-10-2016 03:07:48 [INFO] (repo) - Player ID #3 wants to get some 
+07-10-2016 03:07:48 [INFO] (repo) - Player ID #4 wants to get some 
+07-10-2016 03:07:48 [INFO] (repo) - Player ID #5 wants to get some 
+07-10-2016 03:07:48 [INFO] (repo) - Time 15:00 saved. 
+07-10-2016 03:07:59 [INFO] (repo) - Theme updated. Your local developer thanks you...bitch. 
+07-10-2016 03:07:04 [INFO] (repo) - Theme updated. Your local developer thanks you...bitch. 
+07-10-2016 03:07:08 [INFO] (repo) - Player ID 765 has dropped some muthafukkin cash! 
+07-10-2016 03:07:08 [INFO] (repo) - Time 15:00 saved. 
+07-10-2016 03:07:09 [INFO] (repo) - Player ID 764 has dropped some muthafukkin cash! 
+07-10-2016 03:07:09 [INFO] (repo) - Time 15:00 saved. 
+07-10-2016 03:07:11 [INFO] (repo) - Player ID 767 has dropped some muthafukkin cash! 
+07-10-2016 03:07:11 [INFO] (repo) - Time 15:00 saved. 
+07-10-2016 03:07:13 [INFO] (repo) - Player ID 766 has dropped some muthafukkin cash! 
+07-10-2016 03:07:13 [INFO] (repo) - Time 15:00 saved. 
+07-10-2016 03:07:15 [INFO] (repo) - Player ID 768 has dropped some muthafukkin cash! 
+07-10-2016 03:07:15 [INFO] (repo) - Time 15:00 saved. 
