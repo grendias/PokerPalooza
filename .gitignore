@@ -1,4 +1,6 @@
 bin
 obj
 *suo
-
+settings.json
+dashboard-log.txt
+dashboard-log*.txt

@@ -395,6 +395,12 @@ class Repository
 				$statement->execute();
 				$success = $statement->rowCount() === 1;
 				
+				
+				$player['GamePlayerID'] = $this->database->lastInsertId();
+				$player['IsRebuy'] = 0;
+				$player['IsBoost'] = 0;
+				$this->UpsertBuyin($player);
+				
 				$this->logger->Write('[INFO]', '(repo)', "Player ID #{$player['PlayerID']} wants to get some");
 			}
 			else
