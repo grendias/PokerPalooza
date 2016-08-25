@@ -487,6 +487,44 @@ class Repository
 		}
 	}
 
+	function CalculatePayouts($data)
+	{
+		
+	}
+	
+	function UpsertPayout($data)
+	{
+		try
+		{
+			$sql = '
+				INSERT INTO gamepayouts 
+					(GameID, 
+					PlacingID,
+					Payout)
+				VALUES 
+					(:gameid,
+					:plcid,
+					:payout)
+				';
+
+			$statement = $this->database->prepare($sql);
+			$statement->bindValue(':gameid', $data['GameID']);
+			$statement->bindValue(':plcid', $data['PlacingID']);
+			$statement->bindValue(':payout', $data['Payout']);
+
+			$statement->execute();
+			$success = $statement->rowCount() === 1;
+
+			$this->logger->Write('[INFO]', '(repo)', "The player who places {$data['PlacingID']} will get ${$data['Payout']}");
+
+			return array('success' => $success);
+		}
+		catch (Exception $e)
+		{
+			$this->logger->Write('[ERRO]', '(repo)', "Error upserting payout: $e");
+		}
+	}
+
 	function GetNextPlacing($game)
 	{
 		try
