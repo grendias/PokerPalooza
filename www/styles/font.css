@@ -18,5 +18,25 @@
 	font-family: 'EternalFascination1' !important;
 }
 
+@font-face {
+	font-family: 'PANHEAD';
+	src: url('./fonts/PANHEAD_.ttf');
+}
+
+@font-face {
+	font-family: 'JOKEWOOD';
+	src: url('./fonts/JOKEWOOD.ttf');
+}
+
+@font-face {
+	font-family: 'Nashville';
+	src: url('./fonts/NASHVILL.ttf');
+}
+
+@font-face {
+	font-family: 'Gunfighter';
+	src: url('./fonts/GunfighterAcademy-Regular.ttf');
+}
+
 
 /* Font downloaded from FontsForWeb.com */

@@ -47,7 +47,7 @@ $themes = $repo->GetThemes();
         <div class="header plaque">
             <div class="bevel">
                 <div class="header-text">Skinz's</div>
-				<div class="header-text2">Dungeon of &nbsp;Sin</div>
+				<div class="header-text2">PokerPalooza</div>
             </div>
         </div>
         <div id="body">
