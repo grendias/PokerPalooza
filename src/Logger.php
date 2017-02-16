@@ -10,45 +10,12 @@ class Logger
 
 	private function SetLogFile()
 	{
-        if (!$logfile = fopen($this->logfilepath, "a+")) 
-        {
-            echo "Cannot open file ($logfile)";
-            exit;
-        }
-
-        // Read the log date from the beginning of the file
-        $logdate = fread($logfile, 10);
-
-        // If the date is not today, rename the file to archive it
-        $today =  date('m-d-Y');
-        if (strpos($logdate, '-') && $logdate !== $today)
-        {
-            fclose($logfile);
-            $current = $this->logfilepath;
-            rename($current, "D:\\Projects\\Pokerpalooza\\www\\logs\\dashboard-log_$logdate.txt");
-            $logfile = fopen($this->logfilepath, "a+");
-            fclose($logfile);
-        }
+        
 	}
 
 	public function Write($level, $source, $text)
 	{
-        if (!$logfile = fopen($this->logfilepath, "a+")) 
-        {
-            echo "Cannot open file ($this->logfilepath)";
-            exit;
-        }
-
-        $source = str_pad($source, 6, " ");
-        $timestamp = date('m-d-Y h:m:s');
-        $entry = "$timestamp $level $source - $text \r\n";
         
-        if (fwrite($logfile, $entry) === FALSE) {
-            echo "Cannot write to file ($this->logfilepath)";
-            exit;
-        }
-
-        fclose($logfile);
 	}
 
 	// public function GetBlinds($gameID)
