@@ -18,9 +18,9 @@ class Repository
 		try
 		{
 			$this->database = new PDO(
-				'mysql:host=localhost;dbname=homegame;charset=utf8',
-				'root',
-				'',
+				'mysql:host=us-cdbr-azure-west-b.cleardb.com;dbname=pokerpalooza;charset=utf8',
+				'b64bda92d1a40d',
+				'56dab31a',
                 array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)
 			);
 
