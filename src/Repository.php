@@ -14,11 +14,12 @@ class Repository
 	private function CreateDatabaseConnection()
 	{
 		$this->logger = new Logger();
+		$this->cstring = getenv("MySQLConnectionString");
 
 		try
 		{
 			$this->database = new PDO(
-				'mysql:host=localhost;dbname=homegame;charset=utf8',
+				$this->cstring,
 				'root',
 				'',
                 array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)
