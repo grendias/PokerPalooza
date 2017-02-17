@@ -35,13 +35,13 @@ $themes = $repo->GetThemes();
 <html>
     <head>
         <title>Pokerpalooza-Dashboard</title>
-        <link rel="stylesheet" href="www/styles/font.css" type="text/css" />
-        <link rel="stylesheet" href="www/styles/<?=$game['Theme']?>.css" type="text/css" />
-		<script type="text/javascript" src="www/scripts/jquery-2.1.3.js"></script>
-		<script type="text/javascript" src="www/scripts/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="www/scripts/timer.js"></script>
-		<script type="text/javascript" src="www/scripts/game.js"></script>
-		<script type="text/javascript" src="www/scripts/players.js"></script>
+        <link rel="stylesheet" href="styles/font.css" type="text/css" />
+        <link rel="stylesheet" href="styles/<?=$game['Theme']?>.css" type="text/css" />
+		<script type="text/javascript" src="scripts/jquery-2.1.3.js"></script>
+		<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="scripts/timer.js"></script>
+		<script type="text/javascript" src="scripts/game.js"></script>
+		<script type="text/javascript" src="scripts/players.js"></script>
     </head>
     <body>
         <div class="header plaque">
