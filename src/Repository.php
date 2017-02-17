@@ -64,7 +64,7 @@ class Repository
 		{
 			$sql = '
 				SELECT 	g.GameID,
-						(SELECT Filename FROM themes WHERE ThemeID = g.ThemeID) AS Theme,
+						(SELECT Filename FROM themes WHERE ThemeID = g.ThemeID LIMIT 1) AS Theme,
 						g.Date,
 						g.EndOfRebuy,
 						g.BlindIncrementID,
