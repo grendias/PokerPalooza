@@ -210,7 +210,7 @@ class Repository
 						LastName,
 						(SELECT COUNT(GamePlayerBuyinID) FROM GamePlayerBuyin WHERE IsBoost = 1 AND GamePlayerID = gp.GamePlayerID) AS Boosted,
 						(SELECT COUNT(GamePlayerBuyinID) FROM GamePlayerBuyin WHERE GamePlayerID = gp.GamePlayerID AND IsBoost = 0) AS BuyinCount,
-						(SELECT pl.Code FROM placings AS pl JOIN playerplacings AS pp ON pp.PlacingID = pl.PlacingID WHERE pp.GamePlayerID = gp.GamePlayerID) AS Placing
+						(SELECT pl.Code FROM placings AS pl JOIN playerplacings AS pp ON pp.PlacingID = pl.PlacingID WHERE pp.GamePlayerID = gp.GamePlayerID LIMIT 1) AS Placing
 				FROM 	players AS p 
 				JOIN 	gameplayers AS gp ON gp.PlayerID = p.PlayerID
 				WHERE 	gp.GameID = :gameID
