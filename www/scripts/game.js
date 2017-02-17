@@ -61,7 +61,7 @@
     
     function closeGame() {
         $.ajax({
-            url: "api/closegame.php",
+            url: "www/api/closegame.php",
             type: "post",
             contentType: 'application/json'
         }).done(function (data) {
@@ -95,7 +95,7 @@
         };
 
         $.ajax({
-            url: "api/upsertgame.php",
+            url: "www/api/upsertgame.php",
             type: "post",
             contentType: 'application/json',
             data: JSON.stringify(data),
@@ -126,7 +126,7 @@
         };
 
         $.ajax({
-            url: "api/upsertgame.php",
+            url: "www/api/upsertgame.php",
             type: "post",
             contentType: 'application/json',
             data: JSON.stringify(data),
@@ -155,7 +155,7 @@
         };
 
         $.ajax({
-            url: "api/updatetheme.php",
+            url: "www/api/updatetheme.php",
             type: "post",
             contentType: 'application/json',
             data: JSON.stringify(data),
