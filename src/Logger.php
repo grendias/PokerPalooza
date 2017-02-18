@@ -2,10 +2,10 @@
 
 class Logger
 {
-    private $logfilepath = '\\www\\logs\\dashboard-log.txt';
+    private $logfilepath = "..\\www\\logs\\dashboard-log.txt";
 	public function __construct()
 	{
-		//$this->SetLogFile();
+		$this->SetLogFile();
 	}
 
 	private function SetLogFile()
@@ -25,7 +25,7 @@ class Logger
         {
             fclose($logfile);
             $current = $this->logfilepath;
-            rename($current, "\\www\\logs\\dashboard-log_$logdate.txt");
+            rename($current, "..\\www\\logs\\dashboard-log_$logdate.txt");
             $logfile = fopen($this->logfilepath, "a+");
             fclose($logfile);
         }
@@ -33,7 +33,7 @@ class Logger
 
 	public function Write($level, $source, $text)
 	{
-        /* if (!$logfile = fopen($this->logfilepath, "a+")) 
+        if (!$logfile = fopen($this->logfilepath, "a+")) 
         {
             echo "Cannot open file ($this->logfilepath)";
             exit;
@@ -48,7 +48,7 @@ class Logger
             exit;
         }
 
-        fclose($logfile); */
+        fclose($logfile);
 	}
 
 	// public function GetBlinds($gameID)
