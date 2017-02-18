@@ -2,7 +2,7 @@
 
 class Logger
 {
-    private $logfilepath = "https://palooza1911.file.core.windows.net/?sv=2015-12-11&ss=bfqt&srt=sco&sp=rwdlacup&se=2018-03-03T00:38:14Z&st=2017-02-17T16:38:14Z&sip=104.42.185.131&spr=https&sig=XuSe1gE8ab1TGzg7GUXjmH6RNyDZefRJNFkU0FxGzdI%3D/logs/dashboard-log.txt";
+    private $logfilepath = "\\\\205.132.94.6\\logs\\dashboard-log.txt";
 	public function __construct()
 	{
 		$this->SetLogFile();
