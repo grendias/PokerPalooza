@@ -2,7 +2,7 @@
 
 class Logger
 {
-    private $logfilepath = "https://palooza1911.file.core.windows.net/pokerpalooza/logs/dashboard-log.txt";
+    private $logfilepath = "https://palooza1911.file.core.windows.net/?sv=2015-12-11&ss=bfqt&srt=sco&sp=rwdlacup&se=2018-03-03T00:38:14Z&st=2017-02-17T16:38:14Z&sip=104.42.185.131&spr=https&sig=XuSe1gE8ab1TGzg7GUXjmH6RNyDZefRJNFkU0FxGzdI%3D/logs/dashboard-log.txt";
 	public function __construct()
 	{
 		$this->SetLogFile();
@@ -12,7 +12,7 @@ class Logger
 	{
         if (!$logfile = fopen($this->logfilepath, "a+")) 
         {
-            echo "Cannot open file ($logfile)";
+            echo "Cannot open file - [INITIAL SETUP] ($logfile)";
             exit;
         }
 
@@ -25,7 +25,7 @@ class Logger
         {
             fclose($logfile);
             $current = $this->logfilepath;
-            rename($current, "https://palooza1911.file.core.windows.net/pokerpalooza/logs/dashboard-log_$logdate.txt");
+            rename($current, "https://palooza1911.file.core.windows.net/?sv=2015-12-11&ss=bfqt&srt=sco&sp=rwdlacup&se=2018-03-03T00:38:14Z&st=2017-02-17T16:38:14Z&sip=104.42.185.131&spr=https&sig=XuSe1gE8ab1TGzg7GUXjmH6RNyDZefRJNFkU0FxGzdI%3D/logs/dashboard-log_$logdate.txt");
             $logfile = fopen($this->logfilepath, "a+");
             fclose($logfile);
         }
@@ -35,7 +35,7 @@ class Logger
 	{
         if (!$logfile = fopen($this->logfilepath, "a+")) 
         {
-            echo "Cannot open file ($this->logfilepath)";
+            echo "Cannot open file - [DURING WRITE] ($this->logfilepath)";
             exit;
         }
 
