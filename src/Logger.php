@@ -2,7 +2,7 @@
 
 class Logger
 {
-    private $logfilepath = "\\\\205.132.94.6\\logs\\dashboard-log.txt";
+    private $logfilepath = "https://pokerpalooza.sharefile.com/d-s3b917cf36ec41618";
 	public function __construct()
 	{
 		$this->SetLogFile();
