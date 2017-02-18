@@ -2,7 +2,7 @@
 
 class Logger
 {
-    private $logfilepath = "..\\www\\logs\\dashboard-log.txt";
+    private $logfilepath = "\\\\palooza1911.file.core.windows.net\\pokerpalooza\\logs\\dashboard-log.txt";
 	public function __construct()
 	{
 		$this->SetLogFile();
@@ -25,7 +25,7 @@ class Logger
         {
             fclose($logfile);
             $current = $this->logfilepath;
-            rename($current, "..\\www\\logs\\dashboard-log_$logdate.txt");
+            rename($current, "\\\\palooza1911.file.core.windows.net\\pokerpalooza\\www\\logs\\dashboard-log_$logdate.txt");
             $logfile = fopen($this->logfilepath, "a+");
             fclose($logfile);
         }
