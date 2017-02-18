@@ -10,7 +10,7 @@ class Logger
 
 	private function SetLogFile()
 	{
-        if (!$logfile = fopen($this->logfilepath, "a+")) 
+        if (!$logfile = fopen($this->logfilepath, "r")) 
         {
             echo "Cannot open file - [INITIAL SETUP] ($this->logfilepath)";
             exit;
