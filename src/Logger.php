@@ -12,7 +12,7 @@ class Logger
 	{
         if (!$logfile = fopen($this->logfilepath, "a+")) 
         {
-            echo "Cannot open file - [INITIAL SETUP] ($logfile)";
+            echo "Cannot open file - [INITIAL SETUP] ($this->logfilepath)";
             exit;
         }
 
