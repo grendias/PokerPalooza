@@ -6,5 +6,9 @@
 	$result = $repo->UpsertGame($data);
 	header('HTTP/1.1 200 OK');
 	header('Content-type: application/json');
+	if (!$result || $result == null)
+	{
+		$result['message'] = "We never made it to the Repository";
+	}
 	echo json_encode($result);
 ?>
