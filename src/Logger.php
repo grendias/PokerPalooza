@@ -5,7 +5,7 @@ class Logger
     private $logfilepath = "ftp://pokerpalooza\\jbroseman:Poodooey06@waws-prod-bay-055.ftp.azurewebsites.windows.net/LogFiles/Application/dashboard-log.txt";
 	public function __construct()
 	{
-		//$this->SetLogFile();
+		$this->SetLogFile();
 	}
 
 	private function SetLogFile()
@@ -33,7 +33,7 @@ class Logger
 
 	public function Write($level, $source, $text)
 	{
-        /*if (!$logfile = fopen($this->logfilepath, "a+")) 
+        if (!$logfile = fopen($this->logfilepath, "a+")) 
         {
             echo "Cannot open file - [DURING WRITE] ($this->logfilepath)";
             exit;
@@ -48,7 +48,7 @@ class Logger
             exit;
         }
 
-        fclose($logfile);*/
+        fclose($logfile);
 	}
 
 	// public function GetBlinds($gameID)
