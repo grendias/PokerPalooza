@@ -32,22 +32,25 @@ $logs = $repo->GetTodayLogs();
 							
 							$todate = strtotime($log['Timestamp']);
 							//echo(" {$todate} - ");
+							
 							$realtimestamp = strtotime('-8 hour' , $todate) ;
 							//echo(" {$realtimestamp} - ");
+
 							$formatted = date('Y-m-d', $realtimestamp);
-							$formattedforlog = date('Y-m-d H:i:s', $realtimestamp);
 							//echo(" {$formatted} -");
+
 							$today = date('Y-m-d');
 							//echo(" {$formatted} *********");
+
 							$isequal = strcmp($today, $formatted);
-							echo("IsEqual = {$isequal}");
+							//echo("IsEqual = {$isequal}");
+
 							if ($isequal == 0) { 
-								echo("I made it this far"); 
-								?>
+								$formattedforlog = date('Y-m-d H:i:s', $realtimestamp); ?>
 							
-							<li data-id="<?=$log['LogID']?>">
-								<span><?=$formattedforlog?>&nbsp;<?=$log['Level']?>&nbsp;<?=$log['Source']?>&nbsp;<?=$log['Message']?></span>
-							</li>
+								<li data-id="<?=$log['LogID']?>">
+									<span><?=$formattedforlog?>&nbsp;<?=$log['Level']?>&nbsp;<?=$log['Source']?>&nbsp;<?=$log['Message']?></span>
+								</li>
 						
 						<?php } } ?>
 					</ul>
