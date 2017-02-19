@@ -82,9 +82,6 @@ class Repository
 			';
 
 			$statement = $this->database->query($sql);
-			
-			
-			$this->UpsertLog('[INFO]', '(repo)', "Connected to MySQL Database. Attempting to get active game");
 
 			return $statement->fetch(PDO::FETCH_ASSOC);
 		}
@@ -733,7 +730,7 @@ class Repository
 		{
 			$sql = '
 				INSERT INTO logs 
-					(Level, 
+					(Level,
 					Source,
 					Message)
 				VALUES 
@@ -760,6 +757,31 @@ class Repository
 		catch (Exception $e)
 		{
 			echo("An Error occured while trying to log: $e");
+		}
+	}
+
+	
+	function GetTodayLogs()
+	{
+		try
+		{
+			$sql = '
+				SELECT  Timestamp, 
+						Level,
+						Source,
+						Message
+				FROM    logs
+				ORDER BY LogID DESC
+			';
+				
+			$statement = $this->database->prepare($sql);
+			//$statement->bindValue(':date', date('Y-m-d'));
+			$statement->execute();
+			return $statement->fetchAll(PDO::FETCH_ASSOC);
+		}
+		catch (Exception $e)
+		{
+			$this->UpsertLog('[ERRO]', '(repo)', "Error retreiving available player list from db: $e");
 		}
 	}
 }
