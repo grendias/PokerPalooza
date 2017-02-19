@@ -4,7 +4,6 @@
 class Repository
 {
 	private $database = null;
-	private $logger = null;
 
 	public function __construct()
 	{
@@ -13,7 +12,6 @@ class Repository
 
 	private function CreateDatabaseConnection()
 	{
-		$this->logger = new Logger();
 
 		try
 		{
