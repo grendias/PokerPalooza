@@ -45,7 +45,7 @@ $logs = $repo->GetTodayLogs();
 							$isequal = strcmp($today, $formatted);
 							//echo("IsEqual = {$isequal}");
 
-							if ($isequal == 0) { 
+							if ($isequal == 0 || $isequal) { 
 								$formattedforlog = date('Y-m-d H:i:s', $realtimestamp); ?>
 							
 								<li data-id="<?=$log['LogID']?>">
