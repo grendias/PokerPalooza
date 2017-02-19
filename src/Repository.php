@@ -86,7 +86,7 @@ class Repository
 			$statement = $this->database->query($sql);
 			
 			
-			$this->UpsertLog('[INFO]', '(repo)', "Connected to MySQL Database");
+			$this->UpsertLog('[INFO]', '(repo)', "Connected to MySQL Database. Attempting to get active game");
 
 			return $statement->fetch(PDO::FETCH_ASSOC);
 		}
