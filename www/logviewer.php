@@ -41,7 +41,7 @@ $logs = $repo->GetTodayLogs();
 							//echo(" {$formatted} *********");
 							$isequal = strcmp($today, $formatted);
 							echo("IsEqual = {$isequal}");
-							if ($isequal) { 
+							if ($isequal == 0) { 
 								echo("I made it this far"); 
 								?>
 							
