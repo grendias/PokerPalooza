@@ -769,7 +769,8 @@ class Repository
 				SELECT  Timestamp, 
 						Level,
 						Source,
-						Message
+						Message,
+						LogID
 				FROM    logs
 				ORDER BY LogID DESC
 			';

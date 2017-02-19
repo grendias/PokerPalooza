@@ -31,14 +31,14 @@ $logs = $repo->GetTodayLogs();
 						<?php foreach ($logs as $log) { 
 							
 							$todate = strtotime($log['Timestamp']);
-							echo(" {$todate} - ");
+							//echo(" {$todate} - ");
 							$realtimestamp = strtotime('-8 hour' , $todate) ;
-							echo(" {$realtimestamp} - ");
+							//echo(" {$realtimestamp} - ");
 							$formatted = date('Y-m-d', $realtimestamp);
 							$formattedforlog = date('Y-m-d H:i:s', $realtimestamp);
-							echo(" {$formatted} -");
+							//echo(" {$formatted} -");
 							$today = date('Y-m-d');
-							echo(" {$formatted} *********");
+							//echo(" {$formatted} *********");
 							if (strcmp($today, $formatted)) { ?>
 						
 							<li data-id="<?=$log['LogID']?>">
