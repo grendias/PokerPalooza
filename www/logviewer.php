@@ -36,10 +36,12 @@ $logs = $repo->GetTodayLogs();
 							//echo(" {$realtimestamp} - ");
 							$formatted = date('Y-m-d', $realtimestamp);
 							$formattedforlog = date('Y-m-d H:i:s', $realtimestamp);
-							//echo(" {$formatted} -");
+							echo(" {$formatted} -");
 							$today = date('Y-m-d');
-							//echo(" {$formatted} *********");
-							if (strcmp($today, $formatted)) { echo("I made it this far"); ?>
+							echo(" {$formatted} *********");
+							if (strcmp($today, $formatted)) { 
+								echo("I made it this far"); 
+								?>
 							
 							<li data-id="<?=$log['LogID']?>">
 								<span><?=$formattedforlog?>&nbsp;<?=$log['Level']?>&nbsp;<?=$log['Source']?>&nbsp;<?=$log['Message']?></span>
