@@ -1,0 +1,41 @@
+@media (max-width: 1350px) {
+    .game {
+        font-size: .7em;
+    }
+    .button {
+        font-size: .7em;
+        padding: 2 6px;
+        border-radius: 1px;
+        margin: 0 5px;
+    }
+
+    .header-text2 {
+        font-size: 4em;
+        margin-top: 10px;
+    }
+
+    .chip-values .item {
+        width: 3em;
+        margin: 0 .10em;
+    }
+
+    .chip-values .item span {
+        font-size: .8em;
+        margin-left: -4px;
+    }
+
+    .players {
+        top: 10%;
+    }
+
+    .players li span {
+        font-size: 1.3em;
+        line-height: 1em;
+        padding: 0 0 0 .25em;
+    }
+
+    .blinds {
+        top: 10%;
+        font-size: .9em;
+    }
+}

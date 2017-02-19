@@ -46,6 +46,7 @@ $themes = $repo->GetThemes();
         <title>Pokerpalooza-Dashboard</title>
         <link rel="stylesheet" href="styles/font.css" type="text/css" />
         <link rel="stylesheet" href="styles/<?=$game['Theme']?>.css" type="text/css" />
+        <link rel="stylesheet" href="styles/responsive.css" type="text/css" />
 		<script type="text/javascript" src="scripts/jquery-2.1.3.js"></script>
 		<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="scripts/timer.js"></script>
