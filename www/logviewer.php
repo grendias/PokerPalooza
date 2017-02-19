@@ -10,12 +10,14 @@ $logs = $repo->GetTodayLogs();
 <html>
     <head>
         <title>Pokerpalooza-Logs</title>
+        <link rel="stylesheet" href="styles/logs.css" type="text/css" />
     </head>
     <body>
         <div class="header plaque">
             <div class="bevel">
-                <div class="header-text">PokerPalooza</div>
-				<div class="header-text2">Log viewer</div>
+                <h1 class="header-text">PokerPalooza</h1>
+				<h4 class="header-text2">Log viewer</h3>
+				<hr />
             </div>
         </div>
         <div id="body">
@@ -48,8 +50,8 @@ $logs = $repo->GetTodayLogs();
 							if ($isequal == 0 || $isequal) { 
 								$formattedforlog = date('Y-m-d H:i:s', $realtimestamp); ?>
 							
-								<li data-id="<?=$log['LogID']?>">
-									<span><?=$formattedforlog?>&nbsp;<?=$log['Level']?>&nbsp;<?=$log['Source']?>&nbsp;<?=$log['Message']?></span>
+								<li class="log-<?=$log['Level']?>" data-id="<?=$log['LogID']?>">
+									<span><?=$formattedforlog?>&nbsp;[<?=$log['Level']?>]&nbsp;(<?=$log['Source']?>)&nbsp;<?=$log['Message']?></span>
 								</li>
 						
 						<?php } } ?>

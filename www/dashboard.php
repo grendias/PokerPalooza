@@ -7,16 +7,16 @@ $game = $repo->GetActiveGame();
 if (isset($game))
 {
 	$timer = $repo->GetCurrentTime($game);
-	if (!isset($timer)) $repo->UpsertLog("[ERRO]", "(Dashboard)", "There was no timer data received");
+	if (!isset($timer)) $repo->UpsertLog("ERRO", "Dashboard", "There was no timer data received");
 
 	$blinds = $repo->GetBlinds($game['GameID']);
-	if (!isset($blinds)) $repo->UpsertLog("[ERRO]", "(Dashboard)", "There was no blinds data received");
+	if (!isset($blinds)) $repo->UpsertLog("ERRO", "Dashboard", "There was no blinds data received");
 
 	$chips = $repo->GetChips();
-	if (!isset($chips)) $repo->UpsertLog("[ERRO]", "(Dashboard)", "There was no chips data received");
+	if (!isset($chips)) $repo->UpsertLog("ERRO", "Dashboard", "There was no chips data received");
 
 	$players = $repo->GetPlayers($game['GameID']);
-	if (!isset($players)) $repo->UpsertLog("[ERRO]", "(Dashboard)", "There was no player data received");
+	if (!isset($players)) $repo->UpsertLog("ERRO", "Dashboard", "There was no player data received");
 
 	$activeplayercount = 0;
 	foreach ($players as $player) {
@@ -35,7 +35,7 @@ if (isset($game))
 else 
 {
 	$game['Theme'] = 'suited';
-	$repo->UpsertLog("[ERRO]", "(Dashboard)", "There was no game data retrieved");
+	$repo->UpsertLog("ERRO", "Dashboard", "There was no game data retrieved");
 }
 $themes = $repo->GetThemes();
 

@@ -49,13 +49,13 @@ class Repository
 				"message" => $statement->errorCode()
 			);
 		
-			$this->UpsertLog('[INFO]', '(repo)', "Game closed");
+			$this->UpsertLog('INFO', 'repo', "Game closed");
 
 			return json_encode($result);
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('[ERRO]', '(repo)', "Error while closing game: $e");
+			$this->UpsertLog('ERRO', 'repo', "Error while closing game: $e");
 		}
 	}
 
@@ -87,7 +87,7 @@ class Repository
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('[ERRO]', '(repo)', "Error retreiving active game from db: $e");
+			$this->UpsertLog('ERRO', 'repo', "Error retreiving active game from db: $e");
 		}
 	}
 
@@ -107,7 +107,7 @@ class Repository
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('[ERRO]', '(repo)', "Error retreiving themes from db: $e");
+			$this->UpsertLog('ERRO', 'repo', "Error retreiving themes from db: $e");
 		}
 	}
 
@@ -130,7 +130,7 @@ class Repository
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('[ERRO]', '(repo)', "Error retreiving chips from db: $e");
+			$this->UpsertLog('ERRO', 'repo', "Error retreiving chips from db: $e");
 		}
 	}
 
@@ -157,7 +157,7 @@ class Repository
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('[ERRO]', '(repo)', "Error retreiving blinds from db: $e");
+			$this->UpsertLog('ERRO', 'repo', "Error retreiving blinds from db: $e");
 		}		
 	}
 
@@ -178,7 +178,7 @@ class Repository
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('[ERRO]', '(repo)', "Error retreiving blind options from db: $e");
+			$this->UpsertLog('ERRO', 'repo', "Error retreiving blind options from db: $e");
 		}	
 	}
 
@@ -199,7 +199,7 @@ class Repository
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('[ERRO]', '(repo)', "Error retreiving buyin options from db: $e");
+			$this->UpsertLog('ERRO', 'repo', "Error retreiving buyin options from db: $e");
 		}	
 	}
 
@@ -228,7 +228,7 @@ class Repository
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('[ERRO]', '(repo)', "Error retreiving player list from db: $statement->errorCode - $e");
+			$this->UpsertLog('ERRO', 'repo', "Error retreiving player list from db: $statement->errorCode - $e");
 		}
 	}
     
@@ -252,7 +252,7 @@ class Repository
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('[ERRO]', '(repo)', "Error retreiving available player list from db: $e");
+			$this->UpsertLog('ERRO', 'repo', "Error retreiving available player list from db: $e");
 		}
 	}
 
@@ -305,13 +305,13 @@ class Repository
 			$statement->execute();
 			$success = $statement->rowCount() === 1;
 			
-			$this->UpsertLog('[INFO]', '(repo)', "Game created. Let's get it on!");
+			$this->UpsertLog('INFO', 'repo', "Game created. Let's get it on!");
 
 			return array('success' => $success);
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('[ERRO]', '(repo)', "Could not create game: $e");
+			$this->UpsertLog('ERRO', 'repo', "Could not create game: $e");
 		}
 	}
 
@@ -334,13 +334,13 @@ class Repository
 				"message" => $statement->errorCode()
 			);
 
-			$this->UpsertLog('[INFO]', '(repo)', "Theme updated. Your local developer thanks you...bitch.");
+			$this->UpsertLog('INFO', 'repo', "Theme updated. Your local developer thanks you...bitch.");
 
 			json_encode($result);
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('[ERRO]', '(repo)', "Error updating theme: $e");
+			$this->UpsertLog('ERRO', 'repo', "Error updating theme: $e");
 		}
 	}
 	
@@ -375,7 +375,7 @@ class Repository
 				
 				$player['PlayerID'] = $this->database->lastInsertId();
 				
-				$this->UpsertLog('[INFO]', '(repo)', "Awwww shit! New blood in the house! Welcome, {$player['FirstName']} {$player['LastName']}!");
+				$this->UpsertLog('INFO', 'repo', "Awwww shit! New blood in the house! Welcome, {$player['FirstName']} {$player['LastName']}!");
 			}
 			
 			if (!empty($player['PlayerID']))
@@ -403,19 +403,19 @@ class Repository
 				$player['IsBoost'] = 0;
 				$this->UpsertBuyin($player);
 				
-				$this->UpsertLog('[INFO]', '(repo)', "Player ID #{$player['PlayerID']} wants to get some");
+				$this->UpsertLog('INFO', 'repo', "Player ID #{$player['PlayerID']} wants to get some");
 			}
 			else
 			{
 				$success = false;
-				$this->UpsertLog('[ERRO]', '(repo)', "Error upserting player: Nobody was added to the game");
+				$this->UpsertLog('ERRO', 'repo', "Error upserting player: Nobody was added to the game");
 			}
 
 			return array('success' => $success);
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('[ERRO]', '(repo)', "Error upserting player: $e");
+			$this->UpsertLog('ERRO', 'repo', "Error upserting player: $e");
 		}
 	}
 	
@@ -426,8 +426,8 @@ class Repository
 		try
 		{
 			
-			$this->UpsertLog('[INFO]', '(repo)', "Player ID {$player['IsBoost']} has dropped some muthafukkin cash!");
-			$this->UpsertLog('[INFO]', '(repo)', "Player ID {$player['GamePlayerID']} {$player['IsRebuy']} {$player['IsBoost']}");
+			$this->UpsertLog('INFO', 'repo', "Player ID {$player['IsBoost']} has dropped some muthafukkin cash!");
+			$this->UpsertLog('INFO', 'repo', "Player ID {$player['GamePlayerID']} {$player['IsRebuy']} {$player['IsBoost']}");
 			$sql = '
 				INSERT INTO gameplayerbuyin 
 					(GamePlayerID, 
@@ -449,18 +449,18 @@ class Repository
 
 			if ($player['IsBoost'] === TRUE)
 			{
-				$this->UpsertLog('[INFO]', '(repo)', "Player ID {$player['GamePlayerID']} got boosted!");
+				$this->UpsertLog('INFO', 'repo', "Player ID {$player['GamePlayerID']} got boosted!");
 			}
 			else
 			{
-				$this->UpsertLog('[INFO]', '(repo)', "Player ID {$player['GamePlayerID']} has dropped some muthafukkin cash!");
+				$this->UpsertLog('INFO', 'repo', "Player ID {$player['GamePlayerID']} has dropped some muthafukkin cash!");
 			}
 
 			return array('success' => $success);
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('[ERRO]', '(repo)', "Error upserting player buy in: $e");
+			$this->UpsertLog('ERRO', 'repo', "Error upserting player buy in: $e");
 		}
 	}
 	
@@ -485,13 +485,13 @@ class Repository
 			$statement->execute();
 			$success = $statement->rowCount() === 1;
 
-			$this->UpsertLog('[INFO]', '(repo)', "Game Player ID {$data['GamePlayerID']} is out. Kick rocks, nerd!");
+			$this->UpsertLog('INFO', 'repo', "Game Player ID {$data['GamePlayerID']} is out. Kick rocks, nerd!");
 
 			return array('success' => $success);
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('[ERRO]', '(repo)', "Error placing player: $e");
+			$this->UpsertLog('ERRO', 'repo', "Error placing player: $e");
 		}
 	}
 
@@ -535,7 +535,7 @@ class Repository
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('[ERRO]', '(repo)', "Error retreiving next placing: $e");
+			$this->UpsertLog('ERRO', 'repo', "Error retreiving next placing: $e");
 		}
 	}
 
@@ -583,7 +583,7 @@ class Repository
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('[ERRO]', '(repo)', "Error retreiving current time: $e");
+			$this->UpsertLog('ERRO', 'repo', "Error retreiving current time: $e");
 		}
 	}
 
@@ -649,11 +649,11 @@ class Repository
 
 				json_encode($result);
 			}
-			$this->UpsertLog('[INFO]', '(repo)', "Time {$data['min']}:{$data['sec']} saved.");
+			$this->UpsertLog('INFO', 'repo', "Time {$data['min']}:{$data['sec']} saved.");
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('[ERRO]', '(repo)', "The timer was stopped, but an error occurred while storing: $e");
+			$this->UpsertLog('ERRO', 'repo', "The timer was stopped, but an error occurred while storing: $e");
 		}
 	}
 
@@ -680,7 +680,7 @@ class Repository
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('[ERRO]', '(repo)', "Error occurred while clearing the last saved time: $e");
+			$this->UpsertLog('ERRO', 'repo', "Error occurred while clearing the last saved time: $e");
 		}
 	}
 	
@@ -708,18 +708,18 @@ class Repository
 
 			if ($result['success'] === TRUE)
 			{
-				$this->UpsertLog('[INFO]', '(repo)', "Time's up chumps. And so are Blinds.");
+				$this->UpsertLog('INFO', 'repo', "Time's up chumps. And so are Blinds.");
 			}
 			else
 			{
-				$this->UpsertLog('[ERRO]', '(repo)', "Blinds are up, but something went wrong while executing: {$result['message']}");
+				$this->UpsertLog('ERRO', 'repo', "Blinds are up, but something went wrong while executing: {$result['message']}");
 			}
 
 			json_encode($result);
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('[ERRO]', '(repo)', "Blinds are up, but an error occurred while storing in the db: $e");
+			$this->UpsertLog('ERRO', 'repo', "Blinds are up, but an error occurred while storing in the db: $e");
 		}
 	}
 	
@@ -782,7 +782,7 @@ class Repository
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('[ERRO]', '(repo)', "Error retreiving available player list from db: $e");
+			$this->UpsertLog('ERRO', 'repo', "Error retreiving available player list from db: $e");
 		}
 	}
 }

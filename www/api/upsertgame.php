@@ -9,9 +9,9 @@
 	if (!$result || $result == null)
 	{
 		//$result['message'] = "We never made it to the Repository";
-		$repo->UpsertLog('[ERRO]', '(upsertgame)', "Repository didn't return anything");
+		$repo->UpsertLog('ERRO', 'upsertgame', "Repository didn't return anything");
 	}
 	
-	$repo->UpsertLog('[INFO]', '(upsertgame)', "Repository returned Success: {$result['success']}");
+	$repo->UpsertLog('INFO', 'upsertgame', "Repository returned Success: {$result['success']}");
 	echo json_encode($result);
 ?>
