@@ -36,10 +36,12 @@ $logs = $repo->GetTodayLogs();
 							//echo(" {$realtimestamp} - ");
 							$formatted = date('Y-m-d', $realtimestamp);
 							$formattedforlog = date('Y-m-d H:i:s', $realtimestamp);
-							echo(" {$formatted} -");
+							//echo(" {$formatted} -");
 							$today = date('Y-m-d');
-							echo(" {$formatted} *********");
-							if (strcmp($today, $formatted)) { 
+							//echo(" {$formatted} *********");
+							$isequal = strcmp($today, $formatted);
+							echo("IsEqual = {$isequal}");
+							if ($isequal) { 
 								echo("I made it this far"); 
 								?>
 							
