@@ -39,8 +39,8 @@ $logs = $repo->GetTodayLogs();
 							//echo(" {$formatted} -");
 							$today = date('Y-m-d');
 							//echo(" {$formatted} *********");
-							if (strcmp($today, $formatted)) { ?>
-						
+							if (strcmp($today, $formatted)) { echo("I made it this far"); ?>
+							
 							<li data-id="<?=$log['LogID']?>">
 								<span><?=$formattedforlog?>&nbsp;<?=$log['Level']?>&nbsp;<?=$log['Source']?>&nbsp;<?=$log['Message']?></span>
 							</li>
