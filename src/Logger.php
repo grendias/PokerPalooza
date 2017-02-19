@@ -2,10 +2,11 @@
 
 class Logger
 {
-    private $logfilepath = "ftp://jbroseman:Poodooey06@www.drivehq.com/folder/p13302490.aspx/logs/dashboard-log.txt";
+	private $logfilepath = "ftps://pokerpalooza\\jbroseman:Poodooey06@waws-prod-bay-055.ftp.azurewebsites.windows.net/LogFiles/Application/dashboard-log.txt";
+    //private $logfilepath = "D:\projects\pokerpalooza\www\logs\dashboard-log.txt";
 	public function __construct()
 	{
-		//$this->SetLogFile();
+		$this->SetLogFile();
 	}
 
 	private function SetLogFile()
@@ -25,7 +26,8 @@ class Logger
         {
             fclose($logfile);
             $current = $this->logfilepath;
-            rename($current, "https://palooza1911.file.core.windows.net/?sv=2015-12-11&ss=bfqt&srt=sco&sp=rwdlacup&se=2018-03-03T00:38:14Z&st=2017-02-17T16:38:14Z&sip=104.42.185.131&spr=https&sig=XuSe1gE8ab1TGzg7GUXjmH6RNyDZefRJNFkU0FxGzdI%3D/logs/dashboard-log_$logdate.txt");
+            rename($current, "ftps://pokerpalooza\\jbroseman:Poodooey06@waws-prod-bay-055.ftp.azurewebsites.windows.net/LogFiles/Application/dashboard-log_$logdate.txt");
+            //rename($current, "D:\projects\pokerpalooza\www\logs\dashboard-log_$logdate.txt");
             $logfile = fopen($this->logfilepath, "a+");
             fclose($logfile);
         }
@@ -33,11 +35,13 @@ class Logger
 
 	public function Write($level, $source, $text)
 	{
-        /*if (!$logfile = fopen($this->logfilepath, "a+")) 
-        {
-            echo "Cannot open file - [DURING WRITE] ($this->logfilepath)";
-            exit;
-        }
+		$timeout = 30;
+
+		while (!$logfile = fopen($this->logfilepath, "a+") && $timeout > 0)
+		{
+            sleep(1);
+			$timeout ++;
+		}
 
         $source = str_pad($source, 6, " ");
         $timestamp = date('m-d-Y h:m:s');
@@ -48,7 +52,7 @@ class Logger
             exit;
         }
 
-        fclose($logfile);*/
+        fclose($logfile);
 	}
 
 	// public function GetBlinds($gameID)

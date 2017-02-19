@@ -5,3 +5,5 @@ settings.json
 dashboard-log.txt
 dashboard-log*.txt
 sh.exe.stackdump
+
+www/logs/
