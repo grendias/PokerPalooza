@@ -1,4 +1,4 @@
-@media (max-width: 1350px) {
+@media screen and (max-device-width: 1350px) {
     .game {
         font-size: .7em;
     }
@@ -38,7 +38,7 @@
     }
 }
 
-@media (max-height: 900px) {
+@media screen and (max-device-height: 900px) {
     .blinds {
         top: 5%;
     }
@@ -64,7 +64,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media screen and (max-device-width: 600px) {
 
     .chip-values .item {
         width: 2em;
