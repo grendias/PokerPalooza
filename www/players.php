@@ -1,6 +1,6 @@
 <?php if ($game['GameID'] > 0) { ?>
 	<div class="players">
-		<div class="button" title="Add player" id="Add_Player">Add New</div>
+		<div class="button" title="Add player" id="Add_Player">Add Player</div>
 		<div class="button" title="Add a few players" id="Add_Players">Add Multi</div>
 		<ul>
 			<?php foreach ($players as $player) { ?>
