@@ -199,6 +199,11 @@
         width: 2em;
     }
 
+    .chip-values .item span {
+        font-size: .6em;
+        font-weight: normal;
+    }
+
     .popup,
     .popup.main-menu {
         width: auto;
