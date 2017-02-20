@@ -1,4 +1,4 @@
-﻿html {
+html {
     background-color: #2a2a2a;
     background-image: url('../img/honeycomb.jpg');
     background-size: 100%;
@@ -373,7 +373,7 @@ ul, li {
 
 .blinds li span {
     display: inline-block;
-    padding: 5pt 1em 5pt 1em;
+    padding: 5pt .3em 5pt .3em;
 }
 
 .blinds li.completed-1 {
@@ -420,8 +420,8 @@ ul, li {
 .blinds li img.chip-up {
     display: inline-block;
     vertical-align: middle;
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
     margin: 0 2px;
 }
 
@@ -430,7 +430,7 @@ ul, li {
     vertical-align: middle;
     height: 35px;
     width: 35px;
-    margin: -1px 0 0 -40px;
+    margin: -1px 0 0 -37px;
     background-image: url('../img/chip_up_overlay.png');
     background-size: 100%;
     background-repeat: no-repeat;
