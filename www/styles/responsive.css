@@ -1,4 +1,12 @@
+@media screen and (max-device-width: 1400px) {
+
+    .players li span {
+        line-height: 1em;
+    }
+}
+
 @media screen and (max-device-width: 1350px) {
+
     .game {
         font-size: .7em;
     }
@@ -14,7 +22,7 @@
     }
 
     .header-text2 {
-        font-size: 2em;
+        font-size: 2.5em;
         margin-top: 10px;
     }
 
@@ -60,14 +68,19 @@
 
     .players li span {
         font-size: .8em;
-        padding: 0 0 0 1em;
+        padding: 0 0 0 5px;
+        line-height: 1em;
+    }
+    
+    .timer .display td {
+        font-size: 6em;
     }
 }
 
-@media screen and (max-device-width: 600px) {
+@media screen and (max-device-width: 550px) {
 
-    .chip-values .item {
-        width: 2em;
+    .plaque .bevel {
+        margin: 5px;
     }
 
     .players,
@@ -81,8 +94,25 @@
         width: auto;
     }
 
+    .header {
+        top: 20px;
+    }
+
     .timer {
         left: 40px;
+        top: 100px;
+    }
+    
+    .timer .display td {
+        font-size: 6em;
+    }
+
+    .timer td.first {
+        width: 33.3%;
+    }
+
+    .timer td.last {
+        width: 33.3%;
     }
     
     .players {
@@ -106,50 +136,96 @@
         text-shadow: 2px 2px 3px black;
     }
 
-    .timer {
-        top: 100px;
-    }
-
-    .timer td.first {
-        width: 33.3%;
-    }
-
-    .timer td.last {
-        width: 33.3%;
-    }
-
     .players {
-        top: 460px;
+        top: 400px;
         text-align: center;
-        bottom: 100px;
+        bottom: 110px;
+        overflow: auto;
+    }
+
+    .players ul {
+        background-color: rgba(0, 0, 0, .4);
+        position: absolute;
+        width: 100%;
+        top: 25px;
+        bottom: 0;
         overflow: auto;
     }
 
     .players li {
+        margin-bottom: 1px;
         background: linear-gradient(35deg, transparent 15%, rgba(255, 255, 255, 0.3), transparent 85%);
     }
 
+    .player-menu .button {
+        font-size: .5em;
+        display: block;
+        margin: .5em 1em;
+        padding: 3px;
+        background-size: 250%;
+    }
+
     .game {
-        top: 380px;
+        top: 320px;
         bottom: auto;
     }
 
     .blinds {
-        top: 300px;
+        top: 240px;
     }
 
     .blinds .active {
         text-align: center;
         font-size: 1.9em;
+        background: none;
     }
 
     .blinds li.active .status {
         top: -5px;
         right: -5px;
         left: 0;
+        background: none;
     }
 
     .blinds li:not(.active) {
         display: none;
+    }
+
+    .chip-values {
+        bottom: 20px;;
+    }
+
+    .chip-values .item {
+        width: 2em;
+    }
+
+    .popup,
+    .popup.main-menu {
+        width: auto;
+        left: 20px;
+        right: 20px;
+    }
+
+    footer {
+        left: 0;
+    }
+}
+
+@media screen and (max-device-width: 400px) {
+    .timer {
+        zoom: 75%;
+    }
+
+    .blinds {
+        top: 180px;
+    }
+
+    .game {
+        top: 250px;
+    }
+
+    .players {
+        top: 320px;
+        bottom: 100px;
     }
 }
