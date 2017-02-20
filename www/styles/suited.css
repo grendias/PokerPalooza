@@ -290,8 +290,8 @@ ul, li {
 }
 
 .timer table {
-    display: block;
-    width: 100%;
+    /* display: block; */
+    width: 90%;
 }
 
 .timer .display td {
