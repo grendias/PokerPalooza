@@ -43,6 +43,7 @@ $themes = $repo->GetThemes();
 
 <html>
     <head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Pokerpalooza-Dashboard</title>
         <link rel="stylesheet" href="styles/font.css" type="text/css" />
         <link rel="stylesheet" href="styles/<?=$game['Theme']?>.css" type="text/css" />
