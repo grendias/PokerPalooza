@@ -87,7 +87,7 @@ class Repository
 		}
 		catch (Exception $e)
 		{
-			$this->UpsertLog('ERRO', 'repo', "Error retreiving active game from db: $e");
+			echo("Couldn't get the active game. $e");
 		}
 	}
 
