@@ -12,7 +12,6 @@ class Repository
 
 	private function CreateDatabaseConnection()
 	{
-		echo("Gonna try to connect");
 		try
 		{
 			$this->database = new PDO(
@@ -26,6 +25,8 @@ class Repository
 			);
 
 			$this->database->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
+			
+			echo("Connected to database");
 		}
 		catch(PDOException $ex)
 		{
@@ -61,6 +62,7 @@ class Repository
 
 	public function GetActiveGame()
 	{
+		echo("Getting active game");
 		try
 		{
 			$sql = '
@@ -84,6 +86,7 @@ class Repository
 			$statement = $this->database->query($sql);
 
 			return $statement->fetch(PDO::FETCH_ASSOC);
+			echo("Got active game");
 		}
 		catch (Exception $e)
 		{
