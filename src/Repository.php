@@ -12,7 +12,7 @@ class Repository
 
 	private function CreateDatabaseConnection()
 	{
-
+		echo("Gonna try to connect");
 		try
 		{
 			$this->database = new PDO(
