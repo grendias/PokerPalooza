@@ -16,7 +16,7 @@ class Repository
 		try
 		{
 			$this->database = new PDO(
-				'mysql:host=us-mm-azure-west-08-a.cleardb.net;dbname=pokerpalooza;charset=utf8',
+				'mysql:host=us-cdbr-azure-west-b.cleardb.com;dbname=pokerpalooza;charset=utf8',
 				'b64bda92d1a40d',
 				'56dab31a',
 				// 'mysql:host=localhost;dbname=homegame;charset=utf8',
