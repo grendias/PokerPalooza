@@ -43,16 +43,18 @@ $themes = $repo->GetThemes();
 
 <html>
     <head>
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Pokerpalooza-Dashboard</title>
         <link rel="stylesheet" href="styles/font.css" type="text/css" />
         <link rel="stylesheet" href="styles/<?=$game['Theme']?>.css" type="text/css" />
         <link rel="stylesheet" href="styles/responsive.css" type="text/css" />
-		<script type="text/javascript" src="scripts/jquery-2.1.3.js"></script>
-		<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="scripts/timer.js"></script>
-		<script type="text/javascript" src="scripts/game.js"></script>
-		<script type="text/javascript" src="scripts/players.js"></script>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<script type="text/javascript" src="scripts/jquery-2.1.3.js"></script>
+	<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="scripts/timer.js"></script>
+	<script type="text/javascript" src="scripts/game.js"></script>
+	<script type="text/javascript" src="scripts/players.js"></script>
     </head>
     <body>
         <div class="header plaque">
